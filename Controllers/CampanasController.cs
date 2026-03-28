@@ -70,18 +70,8 @@ namespace PortalCampanas.Controllers
             };
         }
 
-        public IActionResult Index()
-        {
-            return View(ObtenerCampanas());
-        }
-
-        public IActionResult Detalle(int id)
-        {
-            var campana = ObtenerCampanas().FirstOrDefault(x => x.Id == id);
-            return View(campana);
-        }
-
-        public IActionResult Filtro(string categoria, string estado)
+        // 🔥 INDEX CON FILTRO (CORRECTO)
+        public IActionResult Index(string categoria, string estado)
         {
             var lista = ObtenerCampanas();
 
@@ -92,6 +82,17 @@ namespace PortalCampanas.Controllers
                 lista = lista.Where(x => x.Estado == estado).ToList();
 
             return View(lista);
+        }
+
+        public IActionResult Detalle(int id)
+        {
+            var campana = ObtenerCampanas().FirstOrDefault(x => x.Id == id);
+            return View(campana);
+        }
+
+        public IActionResult Filtro()
+        {
+            return View(ObtenerCampanas());
         }
 
         public IActionResult Resumen()

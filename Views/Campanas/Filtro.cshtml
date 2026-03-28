@@ -2,7 +2,7 @@
 
 <h2>Filtrar Campañas</h2>
 
-<form method="get">
+<form method="get" action="/Campanas/Index">
     <select name="categoria" class="form-control mb-2">
         <option value="">Todas</option>
         <option>Electro</option>
@@ -23,7 +23,9 @@
 
 <hr />
 
-@foreach(var c in Model)
+@foreach (var c in Model)
 {
-    <p>@c.Nombre - @c.Estado</p>
+    <div>
+        <strong>@c.Nombre</strong> - @c.Estado
+    </div>
 }
