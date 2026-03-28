@@ -1,0 +1,29 @@
+@model List<PortalCampanas.Models.Campana>
+
+<h2>Filtrar Campañas</h2>
+
+<form method="get">
+    <select name="categoria" class="form-control mb-2">
+        <option value="">Todas</option>
+        <option>Electro</option>
+        <option>Hogar</option>
+        <option>Moda</option>
+        <option>Tecnología</option>
+    </select>
+
+    <select name="estado" class="form-control mb-2">
+        <option value="">Todos</option>
+        <option>Vigente</option>
+        <option>Próxima</option>
+        <option>Finalizada</option>
+    </select>
+
+    <button class="btn btn-warning">Filtrar</button>
+</form>
+
+<hr />
+
+@foreach(var c in Model)
+{
+    <p>@c.Nombre - @c.Estado</p>
+}

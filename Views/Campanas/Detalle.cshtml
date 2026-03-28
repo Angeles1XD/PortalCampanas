@@ -1,0 +1,13 @@
+@model PortalCampanas.Models.Campana
+
+<h2>@Model.Nombre</h2>
+
+<p><b>Categoría:</b> @Model.Categoria</p>
+<p><b>Estado:</b> @Model.Estado</p>
+<p><b>Canal:</b> @Model.Canal</p>
+<p><b>Descuento:</b> @Model.Descuento %</p>
+<p><b>Inicio:</b> @Model.FechaInicio.ToShortDateString()</p>
+<p><b>Fin:</b> @Model.FechaFin.ToShortDateString()</p>
+<p><b>Descripción:</b> @Model.Descripcion</p>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>
