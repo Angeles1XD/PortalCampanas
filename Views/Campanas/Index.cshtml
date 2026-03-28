@@ -1,0 +1,26 @@
+@model List<PortalCampanas.Models.Campana>
+
+<h2>Campañas Comerciales</h2>
+
+<div class="row">
+@foreach(var c in Model)
+{
+    <div class="col-md-4 mb-3">
+        <div class="card p-3 shadow-sm">
+
+            <h5>@c.Nombre</h5>
+
+            <span class="badge bg-success">@c.Estado</span>
+
+            <p>@c.Categoria | % @c.Descuento | @c.FechaInicio.ToShortDateString()</p>
+
+            <span class="badge bg-secondary">@c.Canal</span>
+
+            <a asp-action="Detalle" asp-route-id="@c.Id" class="btn btn-outline-primary mt-2">
+                Ver detalle
+            </a>
+
+        </div>
+    </div>
+}
+</div>
